@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="shortcut icon" href="./assets/img/furry_icon.svg" type="image/x-icon">
+    <!-- RESET CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <main>
+        <div class="key" data-key="65">
+            <kdb>A</kdb>
+            <span class="sound">clap</span>
+        </div>
+        <div class="key" data-key="83">
+            <kdb>S</kdb>
+            <span class="sound">hihat</span>
+        </div>
+        <div class="key" data-key="68">
+            <kdb>D</kdb>
+            <span class="sound">kick</span>
+        </div>
+        <div class="key" data-key="70">
+            <kdb>F</kdb>
+            <span class="sound">openhat</span>
+        </div>
+        <div class="key" data-key="71">
+            <kdb>G</kdb>
+            <span class="sound">boom</span>
+        </div>
+        <div class="key" data-key="72">
+            <kdb>H</kdb>
+            <span class="sound">ride</span>
+        </div>
+        <div class="key" data-key="74">
+            <kdb>J</kdb>
+            <span class="sound">snare</span>
+        </div>
+        <div class="key" data-key="75">
+            <kdb>K</kdb>
+            <span class="sound">tom</span>
+        </div>
+        <div class="key" data-key="76">
+            <kdb>L</kdb>
+            <span class="sound">tink</span>
+        </div>
+    </main>
+    <audio src="./assets/sounds/clap.mp3" data-key="65"></audio>
+    <audio src="./assets/sounds/hihat.mp3" data-key="83"></audio>
+    <audio src="./assets/sounds/kick.mp3" data-key="68"></audio>
+    <audio src="./assets/sounds/openhat.mp3" data-key="70"></audio>
+    <audio src="./assets/sounds/boom.mp3" data-key="71"></audio>
+    <audio src="./assets/sounds/ride.mp3" data-key="72"></audio>
+    <audio src="./assets/sounds/snare.mp3" data-key="74"></audio>
+    <audio src="./assets/sounds/tom.mp3" data-key="75"></audio>
+    <audio src="./assets/sounds/tink.mp3" data-key="76"></audio>
+    <script src="./main.js"></script>
+</body>
+</html>
