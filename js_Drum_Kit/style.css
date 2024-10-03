@@ -10,7 +10,7 @@ main{
     justify-content: center;
     
     min-height: 100vh;
-    background: url(./assets/img/background_img.jpg)  no-repeat center ;
+    background: url(../js_Drum_Kit/assets/img/background_img.jpg)  no-repeat center ;
     background-size: cover;
 }
 .key{
