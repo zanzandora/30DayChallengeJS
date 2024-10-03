@@ -32,7 +32,7 @@ main{
     transition: all 0.07s;
     position: absolute;
     top: 50%;
-    
+    z-index: 1;
     transform-origin: 100%;
     
     
