@@ -1,67 +1,61 @@
-html{
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
 }
-main{
-    background-color: rgba(209, 192, 192, 0.46) ;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+main {
+  background-color: rgba(209, 192, 192, 0.46);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.face-clock{
-    
-    width: 500px;
-    height: 500px;
-    background-color: rgba(197, 215, 216, 0.758);
-    border-radius: 50%;
-    border: 25px solid black;
-    position: relative;
-    transform: translateY(-3px);
-    box-shadow: 2px 4px 20px 10px rgba(128, 128, 128, 0.636) ;
-    
-    
+.face-clock {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(197, 215, 216, 0.758);
+  border-radius: 50%;
+  border: 25px solid black;
+  position: relative;
+  transform: translateY(-3px);
+  box-shadow: 2px 4px 20px 10px rgba(128, 128, 128, 0.636);
 }
-.hand{
-    transform: rotate(90deg);
-    width: 50%;
-    min-height: 15px;
-    transition-timing-function:ease-in-out;
-    background-color: red;
-    border-radius: 10px;
-    transition: all 0.07s;
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    transform-origin: 100%;
-    
-    
+.hand {
+  transform: rotate(90deg);
+  width: 50%;
+  min-height: 15px;
+  transition-timing-function: ease-in-out;
+  background-color: red;
+  border-radius: 10px;
+  transition: all 0.07s;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform-origin: 100%;
 }
-.second-hand{
-    min-height: 5px;
-    background-color: gray ;
+.second-hand {
+  min-height: 5px;
+  background-color: gray;
 }
-.minute-hand{
-    min-height: 10px;
-    background-color: blue ;
-    
+.minute-hand {
+  min-height: 10px;
+  background-color: blue;
 }
-.hour-hand{
-    width: 40%;
-    margin-left: 50px;
+.hour-hand {
+  width: 40%;
+  margin-left: 50px;
 }
-.center-circle{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.812);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+.center-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.812);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 .hand.no-transition {
-    transition: none;
-  }
+  transition: none;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play With CSS Variables and JS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/input_Range.css" />
+  </head>
+  <body>
+    <h1>Update CSS Variables With <span>JS</span></h1>
+    <label for="spacing">spacing</label>
+    <input
+      type="range"
+      name="spacing"
+      id="spacing"
+      class="spacing controls"
+      min="10"
+      max="200"
+      value="10"
+      data-sizing="px"
+    />
+    <label for="blur">blur</label>
+    <input
+      type="range"
+      name="blur"
+      id="blur"
+      class="blur controls"
+      min="0"
+      max="200"
+      value="0"
+      data-sizing="px"
+    />
+
+    <label for="color">Base color</label>
+    <input
+      type="color"
+      name="base"
+      id="color"
+      class="color controls"
+      value="#f9f9f9"
+    />
+    <div class="box">
+      <img src="./demo_img.jpg" alt="" />
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
