@@ -4,16 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./fashion.css">
 </head>
 <body>
-    <h1>Welcome to My Project</h1>
-    <nav>
-        <ul>
-            <li><a href="./js_Drum_Kit/js_Drum_Kit.html">Go to Drum Kit</a></li>
-            <li><a href="./js_clock/js_clock.html">Go to Clock</a></li>
-            <li><a href="./js_Play_with_CSS_Variables/js_Play_with_CSS_Variable.html">Go to Play CSS variable with JS</a></li>
-            <li><a href="./Flex_Panels_Img_Gallery/Flex_Panels_Img_Gallery.html">Go to Flex Panels Img Gallery</a></li>
-        </ul>
-    </nav>
+    
+    
+        
+    
+    <div class="container">
+        <div class="Header">
+            <nav>
+                <p class="auth">Mai Minh Tú</p>
+                <p class="job">Web-Developer</p>
+                <a href="mailto:maiminhtu130803@gmail.com" class="link-mail">maiminhtu130803@gmail.com</a>
+                <p class="start-of-project">Start from May</p>
+            </nav>
+        </div>
+        <div class="slider">
+            <div class="slider-box">
+                
+                <h1>30 DAY CHALLENGE <span>JS</span> </h1>
+                <ul>
+                    <li><a href="./js_Drum_Kit/js_Drum_Kit.html">Drum Kit</a></li>
+                    <li><a href="./js_clock/js_clock.html">Clock</a></li>
+                    <li><a href="./js_Play_with_CSS_Variables/js_Play_with_CSS_Variable.html">Play CSS variable with JS</a></li>
+                    <li><a href="./Flex_Panels_Img_Gallery/Flex_Panels_Img_Gallery.html">Flex Panels Img Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="link-github"><a href="https://github.com/zanzandora">Link to my GitHub</a></p>
+            <div class="social">
+
+                <a href="">Twitter</a>
+                <a href="">Instagram</a>
+                <a href="">Facebook</a>
+            </div>
+        </div>
+      </div>
+      <script>
+        // hiển thị animation khi scoll đến footer
+        window.addEventListener('scroll', function() {
+            const linkElement = document.querySelector('.footer .link-github');
+            const footer = document.querySelector('.footer');
+            const triggerPosition = footer.getBoundingClientRect().top - window.innerHeight;
+    
+            if (triggerPosition <= 0) {
+                linkElement.classList.add('leDanceInTop-animation');
+            }else {
+                linkElement.classList.remove('leDanceInTop-animation');
+            }
+        });
+    </script>
 </body>
 </html>
