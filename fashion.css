@@ -83,6 +83,20 @@ html {
     padding-left: 0;
     font-size: 2.8em;
     margin-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .slider ul li{
+    position: relative;
+  
+  
+  }
+  .slider ul li a {
+    text-decoration: none;
+    color: black;
+    
   }
   .slider ul li:hover {
     animation: moveToRight .3s ease-in-out forwards;
@@ -90,20 +104,16 @@ html {
   .slider ul li:hover::before{
     content: "";
     
-    border: 31px solid;
+    border: 20px solid;
     border-color: transparent transparent transparent black ;
-    left: 50%;
+    left: 0%;
     top: 50%;
-    right: -60%;
-    transform: translate(-50%, -50%);
+    margin-left: -37px;
+    transform: translateY(-50%);
     position: absolute;
     animation: fadeIn .3s ease-in-out forwards;
     
     
-  }
-  .slider ul li a {
-    text-decoration: none;
-    color: black;
   }
   
   /* Footer Styles */
