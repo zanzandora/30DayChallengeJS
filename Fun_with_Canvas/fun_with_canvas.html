@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun with Canvas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #212121;
+        margin: 0;
+    }
+    canvas {
+        border: 1px solid #BADA55;
+    }
+</style>
+<body>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.querySelector('#draw');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth - 20;
+        canvas.height = window.innerHeight - 20;
+        ctx.strokeStyle = '#BADA55';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let hue=0
+        let direction = true;
+        function draw(event) {
+            if (!isDrawing) return;
+            console.log('Drawing');
+            ctx.beginPath();
+            // ctx.globalCompositeOperation = "luminosity"
+            ctx.lineWidth = 0;
+            // hue cứ đến 360 là quay lại màu đỏ 
+            ctx.strokeStyle = `hsl(${hue},100%,50%)`;
+            // Starting form
+            ctx.moveTo(lastX, lastY);
+            //go to
+            ctx.lineTo(event.offsetX, event.offsetY);
+            ctx.stroke();
+            
+            // update lastX and lastY
+            [lastX, lastY] = [event.offsetX, event.offsetY];
+            hue++
+            if (hue > 360){
+                hue = 0; // reset hue to 0 when it reach 360
+            }
+            if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1){
+                direction =!direction;
+                
+            }
+            // change direction and reset lineWidth to 1 or 100 if it reach 1 or 100
+            if(direction) ctx.lineWidth++
+            else ctx.lineWidth-- 
+        }
+
+        canvas.addEventListener('mousedown', (event) => {
+            isDrawing = true;
+            [lastX, lastY] = [event.offsetX, event.offsetY];
+        });
+
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+    </script>
+</body>
+</html>
