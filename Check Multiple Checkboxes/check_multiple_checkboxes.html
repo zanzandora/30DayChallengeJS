@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Multiple Checkbox</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+</head>
+<style>
+    html{
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color:gold;
+   
+}
+main{
+    background-color: white;
+    margin: auto;
+    max-width: 40vh;
+    min-height: 50vh;
+    position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 8px 8px  rgba(128, 128, 128, 0.321);
+}
+.item{
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-bottom:1px solid black;
+    display: flex;
+}
+p{
+    margin: 0;
+    flex: 1;
+}
+input[type="checkbox"]{
+    
+    
+    margin: 0 20px;
+    border: none;
+}
+
+input[type="checkbox"]:checked + p{
+    text-decoration: line-through;
+    color: gray;
+}
+</style>
+<body>
+    <main>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option1" />
+            <p>This is inbox layout</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option2" />
+            <p>Check one item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option3" />
+            <p>Hold down your shift key</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option4" />
+            <p>Check a lower item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option5" />
+            <p>Evertthing inbetween should aslo be set to check</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option6" />
+            <p>Try do it with out any libralies</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option7" />
+            <p>Just regular JS</p>
+        </div>
+        <div class="item">
+            <input type="checkbox"  name="checkbox" value="option7" />
+            <p>Good luck</p>
+        </div>
+    </main>
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let lastCheckbox;
+        function handleCheck(e) {
+            // check if user had the shift key pressed
+            // and check if user are checking it ?
+
+            let inbetweenCheck = false;
+            if (e.shiftKey && this.checked) {
+                checkboxes.forEach((checkbox) => {
+                    if(checkbox === this || checkbox === lastCheckbox) {
+                        inbetweenCheck = !inbetweenCheck;
+                    }
+                    if (inbetweenCheck) {
+                checkbox.checked =true;
+            }
+                    
+                })
+            }
+            
+            
+            lastCheckbox = this;
+        }
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('click', handleCheck);
+        });
+    </script>
+</body>
+</html>
